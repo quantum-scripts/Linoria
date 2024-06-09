@@ -1350,7 +1350,7 @@ do
         });
     end;
 
-    function Funcs:AddLabel(Text, DoesWrap)
+    function Funcs:AddLabel(Text, DoesWrap, Color)
         local Label = {};
 
         local Groupbox = self;
@@ -1361,6 +1361,8 @@ do
             TextSize = 14;
             Text = Text;
             TextWrapped = DoesWrap or false,
+            TextColor3 = Color or Library.FontColor;
+            -- TODO: Add RichText if needed
             TextXAlignment = Enum.TextXAlignment.Left;
             ZIndex = 5;
             Parent = Container;
@@ -3230,7 +3232,7 @@ function Library:CreateWindow(...)
                 Position = UDim2.new(0, 4, 0, 2);
                 TextSize = 14;
                 Text = Info.Name;
-                TextXAlignment = Enum.TextXAlignment.Left;
+                TextXAlignment = Enum.TextXAlignment.Center;
                 ZIndex = 5;
                 Parent = BoxInner;
             });
